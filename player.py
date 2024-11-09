@@ -12,11 +12,21 @@ class Player():
         self.player_type = player_type
 
     def receive_attack(self, damage, attacked_hand_str):
-        # Modify fingers and update the status for both hands and the player
         if attacked_hand_str == 'r':
             self.right_hand.modify_fingers(damage)
         elif attacked_hand_str == 'l':
             self.left_hand.modify_fingers(damage)
         else:
             raise ValueError('Invalid hand to be attacked')
+        self.is_alive = self.left_hand.is_alive or self.right_hand.is_alive
+        
+    def split(self, split_amount, splitting_hand_str):
+        if splitting_hand_str == 'r':
+            self.right_hand.modify_fingers(-split_amount)
+            self.left_hand.modify_fingers(split_amount)
+        elif splitting_hand_str == 'l':
+            self.left_hand.modify_fingers(-split_amount)
+            self.right_hand.modify_fingers(split_amount)
+        else:
+            raise ValueError('Invalid hand to be split')
         self.is_alive = self.left_hand.is_alive or self.right_hand.is_alive
