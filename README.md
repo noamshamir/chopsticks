@@ -11,7 +11,7 @@ Welcome to the **Chopsticks** game! This project implements a console-based vers
 
 ## Overview
 
-Chopsticks is a two-player game where each player (human or computer) attempts to knock out the opponent's hands by transferring finger counts strategically. The implementation features an AI using the Minimax algorithm to evaluate all potential moves, and pick the perfect one.
+This chopsticks game allows users to play a perfect chopsticks bot, pit two bots against each other, or play against another human. The Chopsticks Game is a two-player game where each player (human or computer) attempts to knock out the opponent's hands by either attacking or splitting. The bot uses the minimax algorithm to map out all possible moves, and pick the perfect one.
 
 ## Gameplay Rules
 
@@ -21,7 +21,7 @@ Chopsticks is a two-player game where each player (human or computer) attempts t
     -   **Damage**: When a hand attacks, its finger count is added to the attacked hand's fingers.
 -   **Rollover**: This version of Chopsticks has a rollover, meaning when an attack results in more than five fingers, the resulting fingers is the fingers mod five.
 -   **Winning**: The game ends when both hands of one player reach 0 fingers, making them "dead."
--   **Splitting**: Splits can be made from either hand of a player, as long as
+-   **Splitting**: Splits transfer fingers from one hand of a player to the other hand of that player. Splits can be made from either hand of a player, as long as
     - The hand the fingers are being split from is alive
     - The amount of fingers being split isn't greater than the fingers on the hand being split from.
     - The amount of fingers being split isn't equal to the difference between the fingers of the players hands (to prevent passing by mirrorring position).
