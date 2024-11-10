@@ -8,9 +8,6 @@ Welcome to the **Chopsticks** game! This project allows users to play chopsticks
 -   [How to Run](#how-to-run)
 -   [Algorithm](#algorithm)
 
-## Overview
-
-
 
 ## Gameplay Rules
 
