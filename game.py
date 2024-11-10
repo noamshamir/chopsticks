@@ -91,8 +91,11 @@ class Game():
     def split(self, splitting_player, splitting_hand_str, split_amount, simulate=False):
         if splitting_hand_str == 'r':
             splitting_hand = splitting_player.right_hand
+            receiving_hand = splitting_player.left_hand
         elif splitting_hand_str == 'l':
             splitting_hand = splitting_player.left_hand
+            receiving_hand = splitting_player.right_hand
+
         else:
             raise ValueError('Invalid attacking hand input')
         
@@ -101,6 +104,9 @@ class Game():
             
         if split_amount > splitting_hand.fingers:
             raise ValueError("Hand doesn't have enough fingers")
+        
+        if split_amount == abs(splitting_hand.fingers - receiving_hand.fingers):
+            raise ValueError('I see what you did there. No skipping you silly goose!')
         
         splitting_player.split(split_amount, splitting_hand_str)
         
@@ -127,7 +133,6 @@ class Game():
         next_generation_positions = []
         alive_attacking_hands, alive_attacked_hands = self.get_alive_hands()
 
-        # Generate all possible attack moves
         for attacking_hand_str in alive_attacking_hands:
             for attacked_hand_str in alive_attacked_hands:
                 try:
@@ -137,21 +142,22 @@ class Game():
                 except ValueError as e:
                     print(e)
 
-        # Generate all possible split moves
         for splitting_hand in alive_attacking_hands:
             if splitting_hand == 'r':
                 splitting_hand_fingers = self.attacking_player().right_hand.fingers
+                receiving_hand_fingers = self.attacking_player().left_hand.fingers
             else:
                 splitting_hand_fingers = self.attacking_player().left_hand.fingers
+                receiving_hand_fingers = self.attacking_player().right_hand.fingers
 
-            # Generate split moves with all valid quantities
             for i in range(1, splitting_hand_fingers + 1):
-                try:
-                    game_copy = copy.deepcopy(self)
-                    game_copy.move('split', splitting_hand, splitting_quantity=i, simulate=True)  # Explicitly pass splitting_quantity
-                    next_generation_positions.append((game_copy.make_position(), ('split', splitting_hand, i)))
-                except ValueError as e:
-                    print(e)
+                if i != abs(splitting_hand_fingers - receiving_hand_fingers):
+                    try:
+                        game_copy = copy.deepcopy(self)
+                        game_copy.move('split', splitting_hand, splitting_quantity=i, simulate=True)
+                        next_generation_positions.append((game_copy.make_position(), ('split', splitting_hand, i)))
+                    except ValueError as e:
+                        print(e)
         return next_generation_positions
 
     
