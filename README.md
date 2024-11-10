@@ -22,9 +22,9 @@ Chopsticks is a two-player game where each player (human or computer) attempts t
 -   **Rollover**: This version of Chopsticks has a rollover, meaning when an attack results in more than five fingers, the resulting fingers is the fingers mod five.
 -   **Winning**: The game ends when both hands of one player reach 0 fingers, making them "dead."
 -   **Splitting**: Splits can be made from either hand of a player, as long as
-  - 1. The hand the fingers are being split from is alive
-  - 2. The amount of fingers being split isn't greater than the fingers on the hand being split from.
-  - 3. The amount of fingers being split isn't equal to the difference between the fingers of the players hands (to prevent passing by mirrorring position).
+    - 1. The hand the fingers are being split from is alive
+    - 2. The amount of fingers being split isn't greater than the fingers on the hand being split from.
+    - 3. The amount of fingers being split isn't equal to the difference between the fingers of the players hands (to prevent passing by mirrorring position).
 
 ## How to Run
 
