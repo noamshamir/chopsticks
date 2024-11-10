@@ -1,17 +1,16 @@
 # Chopsticks Minimax
 
-Welcome to the **Chopsticks** game! This project implements a console-based version of the finger-counting children's game "Chopsticks." In this game, players take turns using their fingers to “attack” each other's hands, aiming to eliminate the opponent by strategically transferring finger counts.
+Welcome to the **Chopsticks** game! This project allows users to play chopsticks against a perfect chopsticks bot, pit two bots against each other, or against another human. Chopsticks is a two-player game where each player (human or computer) attempts to knock out the opponent's hands by either attacking or splitting. The bot uses the minimax algorithm to map out all possible moves, and pick the perfect one.
 
 ## Table of Contents
 
--   [Overview](#overview)
 -   [Gameplay Rules](#gameplay-rules)
 -   [How to Run](#how-to-run)
 -   [Algorithm](#algorithm)
 
 ## Overview
 
-This chopsticks game allows users to play a perfect chopsticks bot, pit two bots against each other, or play against another human. The Chopsticks Game is a two-player game where each player (human or computer) attempts to knock out the opponent's hands by either attacking or splitting. The bot uses the minimax algorithm to map out all possible moves, and pick the perfect one.
+
 
 ## Gameplay Rules
 
