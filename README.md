@@ -56,8 +56,3 @@ In a minimax algorithm, after every leaf is found, values are assigned to nodes 
 ### Pruning
 
 Without pruning, this task is too large for a laptop to compute. The main pruning method in this algorithm is remembering all previously calculated positions and their score using a dictionary, so that when a previously solved position is run into, it doesn't need to be recalculated. This also applies to all types reversals to a position, with appropriate modifications to the move and score.
-
-## To-Do
-
-2. Implement splitting moves
-3. Visualize the game to make it easier to play
