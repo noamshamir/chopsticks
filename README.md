@@ -37,7 +37,10 @@ Chopsticks is a two-player game where each player (human or computer) attempts t
     ```bash
     python3 game.py
     ```
-3. [Optional] In the chopsticks.py file, you can change the types of player1 and player2 (computer or human)
+3. [Optional] In the chopsticks.py file, you can change the types of player1 and player2 (computer or human). the starting turn, and the initial position. E.g:
+     ```bash
+    game = Game('computer', 'human', 3,0,4,2, turn='Player 2')    
+    ```
 
 ## Algorithm
 
