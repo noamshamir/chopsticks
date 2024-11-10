@@ -6,7 +6,7 @@ Welcome to the **Chopsticks** game! This project allows users to play chopsticks
 
 -   [Gameplay Rules](#gameplay-rules)
 -   [How to Run](#how-to-run)
--   [Algorithm](#algorithm)
+-   [Algorithm](#minimax-algorithm)
 
 
 ## Gameplay Rules
@@ -38,7 +38,7 @@ Welcome to the **Chopsticks** game! This project allows users to play chopsticks
     game = Game('computer', 'human', 3,0,4,2, turn='Player 2')    
     ```
 
-## Algorithm
+## Minimax Algorithm
 
 The Minimax algorithm in this Chopsticks game implementation powers the AI player, enabling it to evaluate potential moves and choose the optimal one. Here’s a breakdown of how the algorithm works.
 
